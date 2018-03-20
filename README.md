@@ -1,4 +1,4 @@
-# Console Health Monitor (TBD)
+# Checkout Heartbeat
 
 A fluent api to run health checks in background for your console application.
 
@@ -6,7 +6,7 @@ Metrics are based on [AppMetrics](https://www.app-metrics.io/web-monitoring/aspn
 
 ## Where can I get it?
 
-TBD is available on [NuGet](https://www.tbd.org) 
+TBD is gong to be available on [NuGet](https://www.nuget.org) 
 
 ## Usage
 
