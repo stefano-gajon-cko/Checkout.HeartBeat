@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Checkout.Heartbeat", "Check
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Checkout.Heartbeat.Unit.Tests", "Checkout.Heartbeat.Unit.Tests\Checkout.Heartbeat.Unit.Tests.csproj", "{0AAFB95B-57D6-4144-B8F9-D69B04F1EEFF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E72FBBE7-3DBF-4939-A578-3030410C8849}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +32,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0AAFB95B-57D6-4144-B8F9-D69B04F1EEFF} = {E72FBBE7-3DBF-4939-A578-3030410C8849}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {00D684E5-4E6C-4E05-86BA-1EA949ABC6EA}
