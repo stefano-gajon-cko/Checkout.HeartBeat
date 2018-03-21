@@ -300,3 +300,5 @@ src/Onboarding.Review/wwwroot/css/site.min.css
 # Minified CSS and JS Scripts
 src/Onboarding\.Review/wwwroot/css/site\.min\.css
 src/Onboarding\.Review/wwwroot/js/site\.min\.js
+
+\.vscode/
