@@ -10,7 +10,7 @@ TBD
 
 ## Usage
 
-To create a Health Monitor Runner you have to options
+To create a Health Monitor Runner you have two options
 
 __Configuration__
 
