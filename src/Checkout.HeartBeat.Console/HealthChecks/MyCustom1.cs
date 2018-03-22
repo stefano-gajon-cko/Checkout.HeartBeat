@@ -22,6 +22,7 @@ namespace Checkout.HeartBeat.Console.HealthChecks
              }
 
              return new ValueTask<HealthCheckResult>(HealthCheckResult.Healthy());
+             
          }
      }
 }
