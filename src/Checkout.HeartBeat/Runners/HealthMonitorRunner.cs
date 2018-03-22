@@ -21,13 +21,24 @@ namespace Checkout.Heartbeat.Runners
         private const double DefaultFrequency = 10000;
         private const double DefaultTimeout = 10000;
 
+        public HealthMonitorRunner()
+        {
+            _container = new Container();
+        }
+
+        public HealthMonitorRunner(IContainer container)
+        {
+            _container = container;
+        }
+
         /// <summary>
         /// Provide a way to configure the monitor trough HealthMonitorOptions parameter
         /// </summary>
         public HealthMonitorRunner Configure(Action<HealthMonitorOptions> setupAction)
         {
             _setupAction = setupAction;
-            _container = new Container(_ =>
+
+            _container.Configure(_ =>
             {
                 _.Scan(s =>
                 {
@@ -36,7 +47,7 @@ namespace Checkout.Heartbeat.Runners
                     s.AddAllTypesOf<HealthCheck>();
                 });
             });
-            
+
             return this;
         }
 

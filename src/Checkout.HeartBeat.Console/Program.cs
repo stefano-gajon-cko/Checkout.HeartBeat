@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
+using App.Metrics.Health;
 using Checkout.Heartbeat.Runners;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
@@ -48,10 +50,7 @@ namespace Checkout.HeartBeat.Console
                         new Uri("https://checkout.com/")
                     };
                 })
-                .OnHealthStatus(status =>
-                {
-                    _logger.Information(JsonConvert.SerializeObject(status, Formatting.Indented));
-                })
+                .OnHealthStatus(OnHealthStatus)
                 .Start();
 
             #endregion
@@ -75,6 +74,28 @@ namespace Checkout.HeartBeat.Console
                 Task.Delay(TimeSpan.FromSeconds(1)).Wait();
             }
         }
+
+        private static void OnHealthStatus(HealthStatus status)
+        {
+            var msg = $"Application Health Status: {status.Status.ToString().ToUpper()} due to [ {string.Join(" | ", status.Results.Select(r => $"{r.Name} > {r.Check.Status} > {r.Check.Message}"))} ]";
+
+            switch (status.Status)
+            {
+                case HealthCheckStatus.Healthy:
+                    _logger.Information(msg);
+                    break;
+                case HealthCheckStatus.Degraded:
+                    _logger.Warning(msg);
+                    break;
+                case HealthCheckStatus.Unhealthy:
+                    _logger.Error(msg);
+                    break;
+                default:
+                    _logger.Warning(msg);
+                    break;
+            }
+        }
+
     }
 }
 
