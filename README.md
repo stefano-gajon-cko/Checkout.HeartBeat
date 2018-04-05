@@ -19,7 +19,7 @@ var runner = new HealthMonitorRunner();
 
 ```
 
-or if you alreday have your own StructureMap IContainer available you can directly proivde it
+or if you alreday have your own StructureMap IContainer available you can directly inject it
 
 
 ```c#
