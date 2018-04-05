@@ -10,9 +10,9 @@ The Nuget package is available on our internal [MyGet](https://www.myget.org/fee
 
 ## Usage
 
-To create a Health Monitor Runner you have two options
-
 __Configuration__
+
+To configure an Health Monitor Runner you have two options
 
 Option 1 - Programmatic:
 
@@ -94,8 +94,6 @@ runner.OnHealthStatus(status =>
 ```
 
 __Starting the Monitor__
-
-*Program.cs*
 
 ```c#
 
