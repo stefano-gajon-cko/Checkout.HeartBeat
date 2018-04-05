@@ -10,7 +10,8 @@ The Nuget package is available on our internal [MyGet](https://www.myget.org/fee
 
 ## Usage
 
-To create an Health Monitor Runner you have two options
+The main actor in our heartbeat process is the Health Monitor Runner, 
+You can simply instantiate one in the following way:
 
 ```c#
 
@@ -33,8 +34,7 @@ Option 1 - Programmatic:
 
 ```c#
 
-var runner = new HealthMonitorRunner()
-.Configure(options =>
+runner.Configure(options =>
 {
    options.Frequency = TimeSpan.FromSeconds(3);
    options.Timeout = TimeSpan.FromSeconds(3);
@@ -64,8 +64,7 @@ var configuration = new ConfigurationBuilder()
 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
 .Build();
 
-var runner = new HealthMonitorRunner()
-.ConfigureFrom(configuration);
+runner.ConfigureFrom(configuration);
 
 ```
 
