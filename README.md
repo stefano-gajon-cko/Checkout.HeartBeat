@@ -6,7 +6,7 @@ Metrics are based on [AppMetrics](https://www.app-metrics.io/web-monitoring/aspn
 
 ## Nuget
 
-TBD 
+The Nuget package is available on our internal [MyGet](https://www.myget.org/feed/ckotech/package/nuget/Checkout.Heartbeat)
 
 ## Usage
 
