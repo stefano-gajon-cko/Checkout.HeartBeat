@@ -2,7 +2,7 @@
 
 A fluent api to run health checks in background for your console application.
 
-Metrics are based on [AppMetrics](https://www.app-metrics.io/web-monitoring/aspnet-core/) and the background service implementation is inspired by [this](https://blogs.msdn.microsoft.com/cesardelatorre/2017/11/18/implementing-background-tasks-in-microservices-with-ihostedservice-and-the-backgroundservice-class-net-core-2-x/) article
+Metrics are based on [AppMetrics](https://www.app-metrics.io/web-monitoring/aspnet-core/) and the background service implementation is mainly based on [this](https://blogs.msdn.microsoft.com/cesardelatorre/2017/11/18/implementing-background-tasks-in-microservices-with-ihostedservice-and-the-backgroundservice-class-net-core-2-x/) article
 
 ## Nuget
 
@@ -10,9 +10,24 @@ The Nuget package is available on our internal [MyGet](https://www.myget.org/fee
 
 ## Usage
 
-__Configuration__
+To create an Health Monitor Runner you have two options
 
-To configure an Health Monitor Runner you have two options
+```c#
+
+var runner = new HealthMonitorRunner();
+
+```
+
+or if you alreday have your own StructureMap IContainer available you can directly proivde it
+
+
+```c#
+
+var runner = new HealthMonitorRunner(myContainer);
+
+```
+
+__Configuration__
 
 Option 1 - Programmatic:
 
